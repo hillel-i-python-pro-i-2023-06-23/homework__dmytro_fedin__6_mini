@@ -6,7 +6,7 @@ services:
     volumes:
       - ./source:/wd/source:rw
       - ./logs:/wd/logs:rw
-    user: '1000'
+    user: ${UID}
 #    environment:
 #      - NAME=Bob
 #    command:
