@@ -1,10 +1,10 @@
 version: '3.9'
 
 
-#services:
-#  app:
-#    volumes:
-#      - ./logs:/wd/logs:rw
+services:
+  app:
+    volumes:
+      - ./source:/wd/source:rw
 #    user: ${UID}
 #    environment:
 #      - NAME=Bob

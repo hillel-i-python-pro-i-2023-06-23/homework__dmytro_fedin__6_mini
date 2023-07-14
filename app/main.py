@@ -1,5 +1,8 @@
+from services import printer
+
+
 def main() -> None:
-    pass
+    printer.print_output('some_input.txt')
 
 
 if __name__ == "__main__":
