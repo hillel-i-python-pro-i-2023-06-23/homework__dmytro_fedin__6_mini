@@ -5,6 +5,7 @@ services:
   app:
     volumes:
       - ./source:/wd/source:rw
+      - ./logs:/wd/logs:rw
     user: '1000'
 #    environment:
 #      - NAME=Bob
