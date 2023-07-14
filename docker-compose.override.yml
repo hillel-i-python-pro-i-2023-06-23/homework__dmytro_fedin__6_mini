@@ -5,7 +5,7 @@ services:
   app:
     volumes:
       - ./source:/wd/source:rw
-#    user: ${UID}
+    user: '1000'
 #    environment:
 #      - NAME=Bob
 #    command:
