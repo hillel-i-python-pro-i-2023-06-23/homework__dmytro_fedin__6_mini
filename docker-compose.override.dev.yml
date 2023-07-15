@@ -4,7 +4,7 @@ version: '3.9'
 services:
   app:
     volumes:
-      - ./source:/wd/source:ro
+      - ./source:/wd/source:rw
       - ./logs:/wd/logs:rw
       - ./output:/wd/output:rw
     user: ${UID}
