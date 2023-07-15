@@ -1,6 +1,6 @@
 import os.path
 from app.config import FILES_INPUT_DIR
-from services import logger
+from app.loggers.logger import get_logger
 
 
 def print_output(file_name) -> None:
@@ -16,7 +16,7 @@ def print_output(file_name) -> None:
                 return content
         else:
             message = f'{FILES_INPUT_DIR} folder read but no such file as {file_name} found'
-            logger.get_logger(message)
+            get_logger().info(message)
             return message
 
     def print_content() -> None:

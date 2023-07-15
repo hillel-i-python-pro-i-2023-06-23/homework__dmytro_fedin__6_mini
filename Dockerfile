@@ -22,7 +22,7 @@ RUN pip install --upgrade pip && \
 # Set ownership and copy files/directories from the host machine to the container's filesystem during the build process.
 COPY --chown=${USER} ./run.py run.py
 COPY --chown=${USER} ./app app
-COPY --chown=${USER} ./services services
+COPY --chown=${USER} app/services services
 COPY --chown=${USER} ./source source
 COPY --chown=${USER} ./logs logs
 

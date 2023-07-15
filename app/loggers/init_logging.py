@@ -1,21 +1,15 @@
 import logging
 import os
-
 from app.config import LOGS_OUTPUT_DIR
 
+log_file = os.path.join(LOGS_OUTPUT_DIR, 'app.log')
 
-def get_logger(log_message):
 
+def init_logger() -> None:
     logging.basicConfig(
         format='%(asctime)s - %(levelname)s - %(message)s',
         level=logging.INFO,
         datefmt='%m-%d %H-%M',
-        filename=os.path.join(LOGS_OUTPUT_DIR, 'app.log'),
+        filename=log_file,
         filemode='a',
     )
-
-    my_logger = logging.getLogger(__name__)
-
-    my_logger.info(log_message)
-
-    return my_logger

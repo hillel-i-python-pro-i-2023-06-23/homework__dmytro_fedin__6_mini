@@ -4,7 +4,7 @@
 # Exclude files/foldeers needed for docker
 !app
 !run.py
-!services
+!app/services
 !source
 !logs
 !requirements.txt
