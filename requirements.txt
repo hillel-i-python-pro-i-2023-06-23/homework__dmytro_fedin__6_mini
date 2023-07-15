@@ -1,5 +1,7 @@
 # For name generation.
 faker==19.1.0
+# To get files from web
+requests==2.31.0
 
 # [code_style]-[BEGIN]
 # Pre-commit hook.
