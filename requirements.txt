@@ -2,6 +2,9 @@
 faker==19.1.0
 # To get files from web
 requests==2.31.0
+# To process csv
+pandas==2.0.3
+numpy==1.25.1
 
 # [code_style]-[BEGIN]
 # Pre-commit hook.
