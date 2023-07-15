@@ -26,11 +26,9 @@ def get_csv_data():
     current_link = build_file_link(current_id, csv_url_pattern)
 
     csv_url = current_link
-    # print(csv_url)
 
     response = get_response(csv_url)
 
     if response.status_code == 200:
         csv_data = response.content
-        print(csv_data)
         return csv_data

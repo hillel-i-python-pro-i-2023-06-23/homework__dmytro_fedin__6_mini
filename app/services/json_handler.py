@@ -8,7 +8,6 @@ def get_json_data() -> dict | None:
 
     if response.status_code == 200:
         json_data = response.json()
-
         return json_data
     else:
 
