@@ -6,6 +6,17 @@ class User(NamedTuple):
     name: str
     email: str
 
+    def get_dict(self) -> dict:
+        return self._asdict()
+
+    @classmethod
+    def get_fieldnames(cls) -> list[str]:
+        return list(cls._fields)
+
+    @classmethod
+    def from_dict(cls, data: dict) -> "User":
+        return cls(**data)
+
 
 def generate_user() -> User:
     return User(
