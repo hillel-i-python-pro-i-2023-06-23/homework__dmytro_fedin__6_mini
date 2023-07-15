@@ -17,7 +17,7 @@ def get_filename_from_url(url=None) -> str | None:
     return file_name
 
 
-def get_response(url)-> Response | None:
+def get_response(url: str)-> Response | None:
     fil_name = get_filename_from_url(url)
 
     logger = get_logger()
@@ -33,7 +33,7 @@ def get_response(url)-> Response | None:
         save_file()
         return request
     except requests.exceptions.RequestException as exception:
-        logger.info(f'Error: {exception}')
+        logger.error(f'Error: {exception}')
         return None
 
 
