@@ -18,8 +18,8 @@ def get_filename_from_url(url=None) -> str | None:
 
 def save_file(request, file_path) -> None:
     with open(file_path, 'wb') as file:
-        for _ in request.iter_content(chunk_size=8192):
-            file.write(_)
+        for item in request.iter_content(chunk_size=8192):
+            file.write(item)
 
 
 def get_response(url: str) -> Response | None:
