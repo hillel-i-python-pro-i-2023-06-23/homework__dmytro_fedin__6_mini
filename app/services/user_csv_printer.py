@@ -27,6 +27,5 @@ def write_csv(amount: int = 100, file_path: pathlib.Path = None):
         for index, user in enumerate(user_generator, start=1):
             csv_writer.writerow(user.get_dict())
 
-            # logger.info(f'Write {index}/{amount} to csv file')
-
     logger.info(f'End getting csv file for amount of users {amount}')
+    print(f'{amount} users have been generated')
