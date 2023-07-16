@@ -29,7 +29,7 @@ def get_response(url: str)-> Response | None:
     try:
         request = requests.get(url)
 
-        logger.info(f'Response successful in {url}')
+        logger.info(f'Request successful in {url}')
 
         save_file()
 
