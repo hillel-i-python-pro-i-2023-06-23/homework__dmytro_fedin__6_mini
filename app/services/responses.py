@@ -17,12 +17,12 @@ def get_filename_from_url(url=None) -> str | None:
 
 
 def get_response(url: str)-> Response | None:
-    fil_name = get_filename_from_url(url)
+    file_name = get_filename_from_url(url)
 
     logger = get_logger()
 
     def save_file()->None:
-        with open(os.path.join(FILES_INPUT_DIR, fil_name), 'wb') as file:
+        with open(os.path.join(FILES_INPUT_DIR, file_name), 'wb') as file:
             for _ in request.iter_content(chunk_size=8192):
                 file.write(_)
 
