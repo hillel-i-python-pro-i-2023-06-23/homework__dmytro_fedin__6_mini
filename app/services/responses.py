@@ -16,22 +16,23 @@ def get_filename_from_url(url=None) -> str | None:
     return file_name
 
 
-def get_response(url: str)-> Response | None:
+def save_file(request, file_path) -> None:
+    with open(file_path, 'wb') as file:
+        for _ in request.iter_content(chunk_size=8192):
+            file.write(_)
+
+
+def get_response(url: str) -> Response | None:
     file_name = get_filename_from_url(url)
 
     logger = get_logger()
 
-    def save_file()->None:
-        with open(os.path.join(FILES_INPUT_DIR, file_name), 'wb') as file:
-            for _ in request.iter_content(chunk_size=8192):
-                file.write(_)
-
     try:
         request = requests.get(url)
-
         logger.info(f'Request successful in {url}')
 
-        save_file()
+        file_path = os.path.join(FILES_INPUT_DIR, file_name)
+        save_file(request, file_path)
 
         return request
 
@@ -39,7 +40,3 @@ def get_response(url: str)-> Response | None:
         logger.error(f'Error: {exception}')
 
         return None
-
-
-
-
