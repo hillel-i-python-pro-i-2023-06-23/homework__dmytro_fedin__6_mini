@@ -2,8 +2,10 @@ import pandas as pd
 
 from app.services.csv_handler import read_csv_content
 
+
 # Get main data frame.
-data_frame = read_csv_content()
+def get_data_frame():
+    return read_csv_content()
 
 
 def get_mean(data_frame: pd.DataFrame) -> float:
@@ -23,14 +25,20 @@ def get_kg_from_pounds(value: float) -> float:
 
 
 def get_mean_height() -> float:
+    data_frame = get_data_frame()
+
     mean_height = get_mean(data_frame['Height(Inches)'])
     cm = get_cm_from_inches(mean_height)
+
     return cm
 
 
 def get_mean_weight() -> float:
+    data_frame = get_data_frame()
+
     mean_weight = get_mean(data_frame['Weight(Pounds)'])
     kg = get_kg_from_pounds(mean_weight)
+
     return kg
 
 
