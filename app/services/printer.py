@@ -4,12 +4,9 @@ from app.loggers.logger import get_logger
 
 
 def print_output(file_name) -> None:
-
-    # file_name = 'some_input.txt'
     file_path = os.path.join(FILES_INPUT_DIR, file_name)
 
     def get_content() -> str:
-
         if os.path.isfile(file_path):
             with open(file_path) as file:
                 content = file.read()

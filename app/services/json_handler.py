@@ -1,5 +1,6 @@
 from app.services.responses import get_response
 
+# Set some url to process.
 json_url = 'http://api.open-notify.org/astros.json'
 
 
@@ -8,6 +9,7 @@ def get_json_data() -> dict | None:
 
     if response.status_code == 200:
         json_data = response.json()
+
         return json_data
     else:
 

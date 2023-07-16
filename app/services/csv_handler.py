@@ -1,9 +1,9 @@
-import csv
 import io
 import pandas as pd
 
 from app.services.responses import get_response
 
+# Set urls to process.
 drive_url = 'https://drive.google.com/file/d/13nk_FYpcayUck2Ctrela5Tjt9JQbjznt/view'
 csv_url_pattern = 'https://drive.google.com/uc?export=download&id=FILE_ID'
 
@@ -34,9 +34,11 @@ def get_csv_content() -> bytes:
     response = get_response(csv_url)
 
     if response.status_code == 200:
-        # csv_data = response.content
         csv_content = response.content
+
         return csv_content
+    else:
+        return None
 
 
 def read_csv_content() -> pd.DataFrame:
@@ -44,5 +46,6 @@ def read_csv_content() -> pd.DataFrame:
     file_obj = io.BytesIO(content)
 
     data_frame = pd.read_csv(file_obj)
+
     return data_frame
 

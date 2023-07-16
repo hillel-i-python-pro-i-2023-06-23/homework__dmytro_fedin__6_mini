@@ -1,5 +1,6 @@
 import logging
 import os
+
 from app.config import LOGS_OUTPUT_DIR
 
 log_file = os.path.join(LOGS_OUTPUT_DIR, 'app.log')

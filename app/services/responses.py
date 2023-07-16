@@ -4,7 +4,6 @@ from requests import Response
 
 from app.config import FILES_INPUT_DIR
 from urllib.parse import urlsplit
-
 from app.loggers.logger import get_logger
 
 
@@ -31,9 +30,11 @@ def get_response(url: str)-> Response | None:
         request = requests.get(url)
         logger.info(f'Response successful in {url}')
         save_file()
+
         return request
     except requests.exceptions.RequestException as exception:
         logger.error(f'Error: {exception}')
+
         return None
 
 
